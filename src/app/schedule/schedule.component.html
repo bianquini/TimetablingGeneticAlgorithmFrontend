@@ -1,0 +1,96 @@
+<div class="container">
+  <button type="button" class="btn btn-outline-primary" (click)="callService()">Gerar Horário</button>
+</div>
+
+<div *ngIf="hasLoaded" class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Escolha a turma</mat-label>
+    <mat-select [(ngModel)]="selectedValue">
+      <mat-option *ngFor="let item of schedule" [value]="item.courseName">
+        {{ item.courseName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <table *ngIf="selectedValue != null" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Segunda Feira</th>
+        <th scope="col">Terça Feira</th>
+        <th scope="col">Quarta Feira</th>
+        <th scope="col">Quinta Feira</th>
+        <th scope="col">Sexta Feira</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td *ngFor="let item of getSchedule(1)">{{item.subjectName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td *ngFor="let item of getSchedule(2)">{{item.subjectName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td *ngFor="let item of getSchedule(3)">{{item.subjectName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td *ngFor="let item of getSchedule(4)">{{item.subjectName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div *ngIf="!hasLoaded" class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Escolha a turma</mat-label>
+    <mat-select [(ngModel)]="selectedValue">
+      <mat-option>
+        CC1
+      </mat-option>
+      <mat-option>
+        CC2
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Segunda Feira</th>
+        <th scope="col">Terça Feira</th>
+        <th scope="col">Quarta Feira</th>
+        <th scope="col">Quinta Feira</th>
+        <th scope="col">Sexta Feira</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="column">1</th>
+        <td>BD</td>
+        <td>GA</td>
+        <td>af</td>
+        <td>ca</td>
+        <td>tt</td>
+      </tr>
+      <tr>
+        <th scope="column">2</th>
+        <td>Calculo</td>
+      </tr>
+      <tr>
+        <th scope="column">3</th>
+        <td>ALo</td>
+      </tr>
+      <tr>
+        <th scope="column">4</th>
+        <td>ola</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
