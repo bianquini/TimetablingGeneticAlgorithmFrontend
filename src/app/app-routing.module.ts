@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '/', component: HomeComponent },
   { path: 'schedule', component: ScheduleComponent },
 ];
 
