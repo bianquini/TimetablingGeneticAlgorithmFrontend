@@ -12,7 +12,7 @@
     </mat-select>
   </mat-form-field>
 
-  <table *ngIf="selectedValue != null" class="table">
+  <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
@@ -23,7 +23,7 @@
         <th scope="col">Sexta Feira</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="selectedValue != null">
       <tr>
         <th scope="row">1</th>
         <td *ngFor="let item of getSchedule(1)">{{item.subjectName}}</td>
@@ -51,10 +51,10 @@
     <mat-label>Escolha a turma</mat-label>
     <mat-select [(ngModel)]="selectedValue">
       <mat-option>
-        CC1
+        ...
       </mat-option>
       <mat-option>
-        CC2
+        ...
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -71,26 +71,5 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="column">1</th>
-        <td>BD</td>
-        <td>GA</td>
-        <td>af</td>
-        <td>ca</td>
-        <td>tt</td>
-      </tr>
-      <tr>
-        <th scope="column">2</th>
-        <td>Calculo</td>
-      </tr>
-      <tr>
-        <th scope="column">3</th>
-        <td>ALo</td>
-      </tr>
-      <tr>
-        <th scope="column">4</th>
-        <td>ola</td>
-      </tr>
-    </tbody>
   </table>
 </div>

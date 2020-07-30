@@ -45,7 +45,7 @@ export class ScheduleComponent implements OnInit {
       });
 
       this.hasLoaded = true;
-      console.log(this.schedule);
+      alert('Horário gerado, selecione uma turma.');
     });
   }
 }

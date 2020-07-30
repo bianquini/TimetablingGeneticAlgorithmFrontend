@@ -13,7 +13,7 @@ export class GetScheduleService {
 
   getSchedule(): Observable<DTOSchedule[]> {
     return this.http
-      .get<DTOSchedule[]>(`http://localhost:8080/ga/schedule`)
+      .get<DTOSchedule[]>(`https://ifscagtimetabling.herokuapp.com/ga/schedule`)
       .pipe(timeout(1800000));
   }
 }
