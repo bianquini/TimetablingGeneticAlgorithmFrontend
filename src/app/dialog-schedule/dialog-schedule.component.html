@@ -1,0 +1,50 @@
+<div class="container" *ngIf="schedule != null">
+
+  <mat-dialog-content>
+    <div *ngFor="let course of schedule">
+      <h2>{{ course.courseName }}</h2>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" class="coluna">Segunda Feira</th>
+            <th scope="col" class="coluna">Terça Feira</th>
+            <th scope="col" class="coluna">Quarta Feira</th>
+            <th scope="col" class="coluna">Quinta Feira</th>
+            <th scope="col" class="coluna">Sexta Feira</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td *ngFor="let item of getSchedule(1,course)">
+              <h3>{{item.subjectName}}</h3>
+              <p>{{ item.professorsName }}</p>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td *ngFor="let item of getSchedule(2,course)">
+              <h3>{{item.subjectName}}</h3>
+              <p>{{ item.professorsName }}</p>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td *ngFor="let item of getSchedule(3,course)">
+              <h3>{{item.subjectName}}</h3>
+              <p>{{ item.professorsName }}</p>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td *ngFor="let item of getSchedule(4,course)">
+              <h3>{{item.subjectName}}</h3>
+              <p>{{ item.professorsName }}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-dialog-content>
+</div>

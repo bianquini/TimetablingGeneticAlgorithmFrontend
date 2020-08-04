@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Overlay } from '@angular/cdk/overlay';
 import { GetScheduleService } from '../services/get-schedule.service';
 import { DTOSchedule } from 'src/models/DTOSchedule';
 import { ScheduleSubjects } from 'src/models/ScheduleSubjects';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogScheduleComponent } from '../dialog-schedule/dialog-schedule.component';
 
 @Component({
   selector: 'app-schedule',
@@ -20,7 +23,11 @@ export class ScheduleComponent implements OnInit {
     'quinta',
     'sexta',
   ];
-  constructor(private service: GetScheduleService) {}
+  constructor(
+    private service: GetScheduleService,
+    public dialog: MatDialog,
+    public overlay: Overlay
+  ) {}
 
   ngOnInit(): void {}
 
@@ -46,6 +53,12 @@ export class ScheduleComponent implements OnInit {
 
       this.hasLoaded = true;
       alert('Horário gerado, selecione uma turma.');
+    });
+  }
+
+  openDialog(): void {
+    this.dialog.open(DialogScheduleComponent, {
+      data: { schedule: this.schedule },
     });
   }
 }
