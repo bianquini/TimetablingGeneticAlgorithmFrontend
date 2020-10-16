@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "AG-Schedule"
+  "defaultProject": "AG-Schedule",
+  "cli": {
+    "analytics": "cd47af92-f5a8-41d3-b4e3-2770987659b2"
+  }
 }
