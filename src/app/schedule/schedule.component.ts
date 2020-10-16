@@ -16,6 +16,7 @@ export class ScheduleComponent implements OnInit {
   selectedValue: string;
   periodSubjects: ScheduleSubjects[] = [];
   hasLoaded: boolean;
+  inProcessing: boolean = false;
   displayedColumns: string[] = [
     'segunda',
     'terça',
@@ -46,13 +47,14 @@ export class ScheduleComponent implements OnInit {
   }
 
   callService() {
+    this.inProcessing = true;
     this.service.getSchedule().subscribe((res: DTOSchedule[]) => {
       res.forEach((element) => {
         this.schedule.push(element);
       });
 
       this.hasLoaded = true;
-      alert('Horário gerado, selecione uma turma.');
+      this.inProcessing = !this.hasLoaded;
     });
   }
 

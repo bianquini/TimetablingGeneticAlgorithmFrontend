@@ -1,7 +1,6 @@
 .header {
   height: 80px;
   width: 100%;
-  background-color: #919191;
   position: relative;
   margin-bottom: 20px;
 }
@@ -10,13 +9,7 @@
   margin: 10px;
   height: 60px;
   width: 50px;
-  right: 500px;
-}
-
-.header_menu {
-  text-align: right;
-}
-.header_menu ul li {
-  display: inline-block;
-  margin-left: 25px;
+  border:0;
+  outline: none;
+  cursor: pointer;
 }

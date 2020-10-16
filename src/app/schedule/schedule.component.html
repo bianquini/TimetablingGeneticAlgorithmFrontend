@@ -1,5 +1,9 @@
 <div class="container">
-  <button type="button" class="btn btn-outline-primary" (click)="callService()">Gerar Horário</button>
+  <button *ngIf="!inProcessing" type="button" class="btn btn-outline-success" (click)="callService()">Gerar Horário</button>
+  <button *ngIf="inProcessing" class="btn btn-success" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Carregando...
+  </button>
 </div>
 
 <div *ngIf="hasLoaded" class="container">
@@ -40,7 +44,7 @@
       </tr>
     </tbody>
   </table>
-  <button type="button" class="btn btn-outline-primary" (click)="openDialog()">Mostrar todos</button>
+  <button type="button" class="btn btn-outline-success" (click)="openDialog()">Mostrar todos</button>
 
 
 </div>
