@@ -1,4 +1,4 @@
-# TimetablingGeneticAlgorithmFrontend
+# Algoritmo Genético distribuído para problema de Timetabling - Frontend
 
 Front end do trabalho de conclusão de curso referente ao curso de graduação Ciência da Computação
 
